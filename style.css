@@ -183,7 +183,7 @@ html, body{
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #A3A3A3;
-    padding: 3% 0;
+    padding: 4% 0;
     cursor: pointer;
 }
 
@@ -268,4 +268,64 @@ html, body{
 .page3 .top .right button:hover{
     background-color: white;
     color: black;
+}
+
+.page3 .middle{
+    position: relative;
+    width: fit-content;
+    padding-left: 2.8%;
+    top: 38.5%;
+    line-height: 1.8;
+}
+
+.page3 .middle h2{
+    font-size: 14px;
+    color: #A3A3A3;
+}
+
+.page3 .middle h1{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.page3 .middle h1 i{
+    rotate: -30deg;
+    font-weight: 200;
+}
+
+.page3 .bottom{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 58.7%;
+    padding: 0 2.8%;
+}
+
+.page3 .bottom .left{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    gap: 30px;
+    text-transform: uppercase;
+    font-size: 8.5px;
+}
+
+.page3 .bottom .right{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    text-transform: uppercase;
+    font-size: 7px;
+    font-weight: 200;
 }
