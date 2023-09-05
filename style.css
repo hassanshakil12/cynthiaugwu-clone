@@ -315,8 +315,11 @@ html, body{
     align-items: center;
     width: fit-content;
     gap: 30px;
+}
+
+.page3 .bottom .left h1{
     text-transform: uppercase;
-    font-size: 8.5px;
+    font-size: 17px;
 }
 
 .page3 .bottom .right{
@@ -325,7 +328,10 @@ html, body{
     align-items: center;
     justify-content: space-between;
     gap: 55px;
+}
+
+.page3 .bottom .right h1{
     text-transform: uppercase;
-    font-size: 7px;
-    font-weight: 200;
+    font-size: 14px;
+    font-weight: 600;
 }
