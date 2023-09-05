@@ -39,6 +39,7 @@ html, body{
     font-size: 16.5px;
     font-weight: 600;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .nav button{
@@ -46,6 +47,7 @@ html, body{
     background-color: transparent;
     font-weight: 600;
     font-size: 16.5px;
+    cursor: pointer;
 }
 
 .nav button span{
