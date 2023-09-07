@@ -22,6 +22,11 @@ html, body{
     background-color: black;
 }
 
+.bounding{
+    width: 100%;
+    overflow: hidden;
+}
+
 .main .circle{
     width: 12.5px;
     height: 12.5px;
@@ -45,22 +50,21 @@ html, body{
     z-index: 999;
 }
 
+.nav .bounding{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .nav h1{
     font-size: 16.5px;
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
+    /* transform: translateY(50%); */
 }
 
-.nav button{
-    border: none;
-    background-color: transparent;
-    font-weight: 600;
-    font-size: 16.5px;
-    cursor: pointer;
-}
-
-.nav button span{
+.nav h1 span{
     color: #A3A3A3;
 }
 
@@ -78,6 +82,16 @@ html, body{
     position: relative;
 }
 
+.page1 .top .bounding{
+    display: flex;
+    justify-content: end;
+}
+
+.page1 .top .bounding .boundingElem{
+    display: flex;
+    width: 100%;
+}
+
 .page1 .top h1{
     font-size: 190px;
     text-transform: uppercase;
@@ -85,10 +99,7 @@ html, body{
     font-weight: 900;
     letter-spacing: 8px;
     color: #A3A3A3;
-}
-
-.page1 .top h1:nth-child(2){
-    text-align: end;
+    /* transform: translateY(100%); */
 }
 
 .page1 .top p{
@@ -97,6 +108,7 @@ html, body{
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 15px;
+    /* transform: translateY(100%); */
 }
 
 .page1 .middle{
@@ -112,6 +124,7 @@ html, body{
     line-height: 2.2;
     padding: 0 2.8%;
     letter-spacing: 0.5px;
+    /* transform: translateY(100%); */
 }
 
 .page1 .bottom{
