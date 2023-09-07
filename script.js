@@ -5,37 +5,43 @@ var timeout;
 // });
 
 
-const mouseSkew = ()=>{
-    var xScale = 1
-    var yScale = 1
+function circleChaptaKaro() {
+    // define default scale value
+    var xscale = 1;
+    var yscale = 1;
 
-    var xPrev = 0
-    var yPrev = 0
-    window.addEventListener('mousemove', function(dets){
-        clearTimeout(timeout)
-        xScale = gsap.utils.clamp(0.6, 1.4, dets.clientX - xPrev)
-        yScale = gsap.utils.clamp(0.6, 1.4, dets.clientY - yPrev)
+    var xprev = 0;
+    var yprev = 0;
 
-        xPrev = dets.clientX
-        yPrev = dets.clientY
+    window.addEventListener("mousemove", function (dets) {
+        clearTimeout(timeout);
 
-        mouseFollower(xScale, yScale)
+        xscale = gsap.utils.clamp(0.8, 1.2, dets.clientX - xprev);
+        yscale = gsap.utils.clamp(0.8, 1.2, dets.clientY - yprev);
 
-        timeout = setTimeout(function(){
-            document.querySelector('.circle').style.transform = `translate(${dets.clientX}px, ${dets.clientY}px), scale(1, 1)`;
-        }, 100)
-    })
+        xprev = dets.clientX;
+        yprev = dets.clientY;
+
+        circleMouseFollower(xscale, yscale);
+
+        timeout = setTimeout(function () {
+            document.querySelector(
+                "#minicircle"
+            ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`;
+        }, 100);
+    });
 }
 
-mouseSkew()
-
-const mouseFollower = (xScale, yScale) =>{
-    window.addEventListener('mousemove', function(dets){
-        document.querySelector('.circle').style.transform = `translate(${dets.clientX}px, ${dets.clientY}px), scale(${xScale}, ${yScale})`;
-    })
+function circleMouseFollower(xscale, yscale) {
+    window.addEventListener("mousemove", function (dets) {
+        document.querySelector(
+            ".circle"
+        ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
+    });
 }
 
-mouseFollower()
+circleChaptaKaro();
+circleMouseFollower();
 
 const firstPageAnimation = () =>{
     const tl = gsap.timeline()
