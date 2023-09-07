@@ -3,9 +3,34 @@
 //     smooth: true
 // });
 
-const mouseFollower = (dets) =>{
+var timeout;
+const mouseSkew = ()=>{
+    var xScale = 1
+    var yScale = 1
+    
+    var xPrev = 0
+    var yPrev = 0
     window.addEventListener('mousemove', function(dets){
-        document.querySelector('.circle').style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
+        clearTimeout(timeout)
+        xScale = gsap.utils.clamp(0.6, 1.4, dets.clientX - xPrev)
+        yScale = gsap.utils.clamp(0.6, 1.4, dets.clientY - yPrev)
+
+        xPrev = dets.clientX
+        yPrev = dets.clientY
+
+        mouseFollower(xScale, yScale)
+
+        timeout = setTimeout(function(){
+            document.querySelector('.circle').style.transform = `translate(${dets.clientX}px, ${dets.clientY}px), scale(1, 1)`;
+        }, 100)
+    })
+}
+
+mouseSkew()
+
+const mouseFollower = (xScale, yScale) =>{
+    window.addEventListener('mousemove', function(dets){
+        document.querySelector('.circle').style.transform = `translate(${dets.clientX}px, ${dets.clientY}px), scale(${xScale}, ${yScale})`;
     })
 }
 
