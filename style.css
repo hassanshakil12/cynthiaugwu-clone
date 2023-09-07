@@ -162,6 +162,11 @@ html, body{
 .page1 .bottom .left h1 i{
     font-weight: 200;
     rotate: -30deg;
+    transition: all ease 0.15s;
+}
+
+.page1 .bottom .left h1:hover i{
+    rotate: 0deg
 }
 
 .page1 .bottom .right{
