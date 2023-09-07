@@ -1,9 +1,10 @@
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('.main'),
-    smooth: true
-});
-
 var timeout;
+// const scroll = new LocomotiveScroll({
+//     el: document.querySelector('.main'),
+//     smooth: true
+// });
+
+
 const mouseSkew = ()=>{
     var xScale = 1
     var yScale = 1
