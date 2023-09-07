@@ -1,13 +1,13 @@
-// const scroll = new LocomotiveScroll({
-//     el: document.querySelector('.main'),
-//     smooth: true
-// });
+const scroll = new LocomotiveScroll({
+    el: document.querySelector('.main'),
+    smooth: true
+});
 
 var timeout;
 const mouseSkew = ()=>{
     var xScale = 1
     var yScale = 1
-    
+
     var xPrev = 0
     var yPrev = 0
     window.addEventListener('mousemove', function(dets){
