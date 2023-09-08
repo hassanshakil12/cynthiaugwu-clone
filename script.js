@@ -25,7 +25,7 @@ const mouseSkews = () => {
 
         timeout = setTimeout(function () {
             document.querySelector(
-                "#minicircle"
+                ".circle"
             ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`;
         }, 100);
     });
@@ -34,7 +34,7 @@ const mouseSkews = () => {
 const mouseFollower = (xscale, yscale) => {
     window.addEventListener("mousemove", function (dets) {
         document.querySelector(
-            ".main .circle"
+            ".circle"
         ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
     });
 }
@@ -100,7 +100,7 @@ const secondPageAnimation = () =>{
 }
 
 
-firstPageAnimation()
-secondPageAnimation()
+firstPageAnimation();
+secondPageAnimation();
 mouseSkews();
 mouseFollower();
