@@ -27,7 +27,7 @@ html, body{
     overflow: hidden;
 }
 
-.main .circle{
+.circle{
     width: 12.5px;
     height: 12.5px;
     position: absolute;
@@ -219,7 +219,8 @@ html, body{
 .page2 img{
     position: absolute;
     width: 40%;
-    display: none;
+    opacity: 0;
+    z-index: 9;
 }
 
 .page2 .elem h1{

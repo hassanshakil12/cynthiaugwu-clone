@@ -5,8 +5,7 @@ var timeout;
 // });
 
 
-function circleChaptaKaro() {
-    // define default scale value
+function mouseSkews() {
     var xscale = 1;
     var yscale = 1;
 
@@ -22,7 +21,7 @@ function circleChaptaKaro() {
         xprev = dets.clientX;
         yprev = dets.clientY;
 
-        circleMouseFollower(xscale, yscale);
+        mouseFollower(xscale, yscale);
 
         timeout = setTimeout(function () {
             document.querySelector(
@@ -32,18 +31,15 @@ function circleChaptaKaro() {
     });
 }
 
-function circleMouseFollower(xscale, yscale) {
+function mouseFollower(xscale, yscale) {
     window.addEventListener("mousemove", function (dets) {
         document.querySelector(
-            ".circle"
+            ".main .circle"
         ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
     });
 }
 
-circleChaptaKaro();
-circleMouseFollower();
-
-const firstPageAnimation = () =>{
+const firstPageAnimation = () => {
     const tl = gsap.timeline()
     tl.to('.nav .bounding h1', {
         y: 0,
@@ -51,30 +47,60 @@ const firstPageAnimation = () =>{
         ease: Expo.easeInOut,
         duration: 2,
     })
-    .to('.page1 .top .bounding h1', {
-        y: 0,
-        ease: Expo.easeInOut,
-        duration: 2,
-        stagger: 0.1,
-        delay: -2
-    })
-    .to('.page1 .top .bounding p', {
-        y: 0,
-        ease: Expo.easeInOut,
-        duration: 2,
-        delay: -1.5
-    })
-    .to('.page1 .middle .bounding h1', {
-        y: 0,
-        ease: Expo.easeInOut,
-        duration: 2,
-        stagger: 0.1,
-        delay: -1.8
-    })
-    .to('.page1 .bottom',{
-        opacity: 1,
-        delay: -1
+        .to('.page1 .top .bounding h1', {
+            y: 0,
+            ease: Expo.easeInOut,
+            duration: 2,
+            stagger: 0.1,
+            delay: -2
+        })
+        .to('.page1 .top .bounding p', {
+            y: 0,
+            ease: Expo.easeInOut,
+            duration: 2,
+            delay: -1.5
+        })
+        .to('.page1 .middle .bounding h1', {
+            y: 0,
+            ease: Expo.easeInOut,
+            duration: 2,
+            stagger: 0.1,
+            delay: -1.8
+        })
+        .to('.page1 .bottom', {
+            opacity: 1,
+            delay: -1
+        })
+}
+
+const secondPageAnimation = () =>{
+    document.querySelectorAll('.page2 .elem').forEach(function (elem) {
+        var rotate = 0
+        var diffrot = 0
+
+        elem.addEventListener('mouseleave', function (dets) {
+            gsap.to(elem.querySelector('img'), {
+                opacity: 0,
+                ease: Power3,
+            })
+        })
+        elem.addEventListener('mousemove', function (dets) {
+            var diff = dets.clientY - elem.getBoundingClientRect().top
+            diffrot = dets.clientX - rotate
+            rotate = dets.clientX
+            gsap.to(elem.querySelector('img'), {
+                opacity: 1,
+                top: diff,
+                left: dets.clientX,
+                ease: Power1,
+                rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5)
+            })
+        })
     })
 }
 
+
 firstPageAnimation()
+secondPageAnimation()
+mouseSkews();
+mouseFollower();
