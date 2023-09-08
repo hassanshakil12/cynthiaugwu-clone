@@ -81,7 +81,7 @@ const secondPageAnimation = () =>{
         elem.addEventListener('mouseleave', function (dets) {
             gsap.to(elem.querySelector('img'), {
                 opacity: 0,
-                ease: Power3,
+                ease: Power1,
             })
         })
         elem.addEventListener('mousemove', function (dets) {
@@ -93,7 +93,7 @@ const secondPageAnimation = () =>{
                 top: diff,
                 left: dets.clientX,
                 ease: Power1,
-                rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5)
+                rotate: gsap.utils.clamp(-20, 20, diffrot * 0.8)
             })
         })
     })

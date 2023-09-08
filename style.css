@@ -334,6 +334,11 @@ html, body{
 .page3 .middle h1 i{
     rotate: -30deg;
     font-weight: 200;
+    transition: all ease 0.15s;
+}
+
+.page3 .middle h1:hover i{
+    rotate: 0deg;
 }
 
 .page3 .bottom{
