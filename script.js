@@ -32,7 +32,8 @@ const mouseSkews = () => {
 }
 
 const mouseFollower = (xscale, yscale) => {
-    window.addEventListener("mousemove", function (dets) {
+    var screen = document.querySelector('body')
+    screen.addEventListener("mousemove", function (dets) {
         document.querySelector(
             ".circle"
         ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;

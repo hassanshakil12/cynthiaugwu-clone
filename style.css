@@ -30,11 +30,12 @@ html, body{
 .circle{
     width: 12.5px;
     height: 12.5px;
-    position: absolute;
+    position: fixed;
     z-index: 999999;
     border-radius: 50%;
     background-color: white;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    pointer-events: none;
 }
 
 .nav{
