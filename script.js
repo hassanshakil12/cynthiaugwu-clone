@@ -5,7 +5,7 @@ var timeout;
 // });
 
 
-function mouseSkews() {
+const mouseSkews = () => {
     var xscale = 1;
     var yscale = 1;
 
@@ -31,7 +31,7 @@ function mouseSkews() {
     });
 }
 
-function mouseFollower(xscale, yscale) {
+const mouseFollower = (xscale, yscale) => {
     window.addEventListener("mousemove", function (dets) {
         document.querySelector(
             ".main .circle"
