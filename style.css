@@ -201,7 +201,7 @@ html, body{
 .page1 .bottom .left h1 i{
     font-weight: 200;
     rotate: -30deg;
-    transition: all ease 0.15s;
+    transition: all ease 0.3s;
 }
 
 .page1 .bottom .left h1:hover i{
@@ -391,7 +391,7 @@ html, body{
 .page3 .middle h1 i{
     rotate: -30deg;
     font-weight: 200;
-    transition: all ease 0.15s;
+    transition: all ease 0.3s;
 }
 
 .page3 .middle h1:hover i{

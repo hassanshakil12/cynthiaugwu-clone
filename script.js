@@ -1,9 +1,4 @@
 var timeout;
-// const scroll = new LocomotiveScroll({
-//     el: document.querySelector('.main'),
-//     smooth: true
-// });
-
 
 const mouseSkews = () => {
     var xscale = 1;
@@ -32,7 +27,7 @@ const mouseSkews = () => {
 }
 
 const mouseFollower = (xscale, yscale) => {
-    var screen = document.querySelector('body')
+    var screen = document.querySelector('html')
     screen.addEventListener("mousemove", function (dets) {
         document.querySelector(
             ".circle"
